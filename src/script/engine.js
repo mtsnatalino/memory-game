@@ -15,10 +15,10 @@ const emojis = [
     "💩",
     "😭",
     "😭",
-]
+];
 let openCards = [];
 
-let shuffleEmojis = emojis.sort(() => (Math.random() > 0.5 ? 2: -1));
+let shuffleEmojis = emojis.sort(() => (Math.random() > 0.5 ? 2 : -1));
 
 for(let i = 0; i < emojis.length; i++){
     let box = document.createElement("div");
@@ -36,10 +36,12 @@ function handleClick(){
     if(openCards.length == 2){
         setTimeout(checkMatch, 500);
     }
+
+    console.log(openCards);
 }
 
 function checkMatch(){
-    if(openCard[0].innerHTML === openCards[1].innerHTML){
+    if(openCards[0].innerHTML === openCards[1].innerHTML){
         openCards[0].classList.add("boxMatch");
         openCards[1].classList.add("boxMatch");
     }else{
